@@ -100,7 +100,7 @@ class Login(GenericModel):
     username = db.Column('username', db.String(20), primary_key=True)
     password = db.Column('password', db.String(20))
 
-db.drop_all()
+# db.drop_all()
 db.create_all()
 login = Login.query.filter(Login.username=="admin",Login.password=="admin123").first()
 if login:
