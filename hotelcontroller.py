@@ -21,7 +21,7 @@ def save_or_update_hotels():
             hotelwebsite = request.form['hotelwebsite']
             dbhotel = Hotel.query.filter_by(id=hotelid).first()
             if dbhotel:
-                dbhotel.id = hotelid
+                # dbhotel.id = hotelid
                 dbhotel.name = hotelname
                 dbhotel.address = hoteladr
                 dbhotel.contact = hotelcont
@@ -32,14 +32,17 @@ def save_or_update_hotels():
                 db.session.commit()
                 msg = "Hotel Updated Successfully..!"
             else:
-                dbhotel = Hotel(id=hotelid,name=hotelname,address=hoteladr,contact=hotelcont,website=hotelwebsite)
-                hotelaccno = request.form['hotelaccno']
-                # print(hotelaccno)
-                if hotelaccno:
-                    dbhotel.accno = hotelaccno
-                db.session.add(dbhotel)
-                db.session.commit()
-                msg = "Hotel Created Successfully...!"
+                if hotelname and hoteladr and hotelcont and hotelwebsite:
+                    dbhotel = Hotel(name=hotelname,address=hoteladr,contact=hotelcont,website=hotelwebsite)
+                    hotelaccno = request.form['hotelaccno']
+                    # print(hotelaccno)
+                    if hotelaccno:
+                        dbhotel.accno = hotelaccno
+                    db.session.add(dbhotel)
+                    db.session.commit()
+                    msg = "Hotel Created Successfully...!"
+                else:
+                    msg = "Invalid credentials...!"
 
         return render_template('dashboard.html',resp='addhotel',msg=msg, user=session['userinfo'],hotellist = Hotel.query.all(),
                                hotel = Hotel.dummy_hotel(),
