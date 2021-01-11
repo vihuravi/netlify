@@ -1,5 +1,5 @@
 import accountscontroller,hotelcontroller,menucontroller,roomcontroller,logincontroller,customer_controller
-config import app
+from config import app
 
 
 if __name__ == '__main__':
