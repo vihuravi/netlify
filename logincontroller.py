@@ -38,7 +38,7 @@ def logout():
         session.pop('userinfo')
     return redirect(url_for('hotel_booking'))
 
-@app.route('/hotel_booking/',methods=['GET'])
+@app.route('/',methods=['GET'])
 def hotel_booking():
     if 'userinfo' in session:
         if session['userinfo'] != 'admin':
