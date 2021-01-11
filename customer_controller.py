@@ -16,19 +16,19 @@ def register_customer():
         dbcust = Customer.query.filter(Customer.name == custname).first()
         dblogin = Login.query.filter_by(username=custname).first()
         if dbcust:
-            # if dbcust.name != custname:
-            #     dbcust.address = custadr
-            #     dbcust.contact = custcont
-            #     dbcust.email = custmail
-            #     dblogin.password = custpass
-            #     if custaccno:
-            #         dbcust.accno = custaccno
-            #     db.session.commit()
-            #     msg = "Customer Data Updated Successfully..!"
-            #     return render_template('customer_register.html',
-            #                            resp=msg,
-            #                            cust=Customer.dummy_cust(),
-            #                            acclist=remaining_accounts())
+            if dbcust.id == int(request.form['id']):
+                dbcust.address = custadr
+                dbcust.contact = custcont
+                dbcust.email = custmail
+                dblogin.password = custpass
+                if custaccno:
+                    dbcust.accno = custaccno
+                db.session.commit()
+                msg = "Customer Data Updated Successfully..!"
+                return render_template('customer_register.html',
+                                        resp=msg,
+                                        cust=Customer.dummy_cust(),
+                                        acclist=remaining_accounts())
             msg = "Username Already Exist...!"
             return render_template('customer_register.html',
                                    resp=msg,
@@ -36,19 +36,21 @@ def register_customer():
                                    acclist=remaining_accounts())
 
         else:
-            dbcust = Customer(name=custname, address=custadr, contact=custcont, email=custmail)
-            dbcustomer = Login(username=custname, password=custpass)
-            if custaccno:
-                dbcust.accno = custaccno
-            db.session.add_all([dbcust,dbcustomer])
-            db.session.commit()
-            msg = "Registration Successfully...!"
-            return render_template('customer_register.html',
+            if custname and custadr and custcont and custmail and custpass:
+                dbcust = Customer(name=custname, address=custadr, contact=custcont, email=custmail)
+                dbcustomer = Login(username=custname, password=custpass)
+                if custaccno:
+                    dbcust.accno = custaccno
+                db.session.add_all([dbcust,dbcustomer])
+                db.session.commit()
+                msg = "Registration Successfully...!"
+                return render_template('customer_register.html',
                                    resp=msg,
                                    cust=Customer.dummy_cust(),
                                    acclist=remaining_accounts())
+            msg = 'Invalid credentials'
 
-    return render_template('customer_register.html',
+    return render_template('customer_register.html',resp=msg,
                            cust=Customer.dummy_cust(),
                            acclist=remaining_accounts())
 
