@@ -110,9 +110,9 @@ else:
     db.session.add(log)
     db.session.commit()
     
-hot = Hotel.query.filter(Hotel.address=="Aurangabad").first()
-db.session.delete(hot)
-db.session.commit()
+# hot = Hotel.query.filter(Hotel.address=="Aurangabad").first()
+# db.session.delete(hot)
+# db.session.commit()
     
 if __name__ == '__main__':
     cust = Login.query.filter_by(username='ravindra').first()
