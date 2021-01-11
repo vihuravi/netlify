@@ -1,4 +1,4 @@
-from hotel_web_application.config import db,app
+from config import db,app
 
 class GenericModel(db.Model):
     __abstract__ = True

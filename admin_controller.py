@@ -1,4 +1,4 @@
-from hotel_web_application.model import *
+from model import *
 import random
 
 #logincontroller --> admin/admin123 -->             add/remove/update/get/getall -- rooms/menus/hotel/account

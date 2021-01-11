@@ -1,7 +1,7 @@
-from hotel_web_application.model import *
-from hotel_web_application.hotelcontroller import remaining_accounts
+from model import *
+from hotelcontroller import remaining_accounts
 from flask import render_template,request,redirect,url_for,session
-from hotel_web_application.logincontroller import hotel_booking
+from logincontroller import hotel_booking
 
 @app.route('/registration/',methods=['GET','POST'])
 def register_customer():

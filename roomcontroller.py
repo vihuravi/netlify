@@ -1,6 +1,6 @@
-from hotel_web_application.model import *
+from model import *
 from flask import request,render_template,session
-from hotel_web_application.hotelcontroller import remaining_accounts
+from hotelcontroller import remaining_accounts
 
 
 @app.route('/room/',methods=['GET','POST'])

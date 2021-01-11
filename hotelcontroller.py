@@ -1,4 +1,4 @@
-from hotel_web_application.model import *
+from model import *
 from flask import request,render_template,session
 
 def remaining_accounts():

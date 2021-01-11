@@ -1,7 +1,7 @@
-from hotel_web_application.model import *
+from model import *
 from flask import render_template,request,session,url_for,redirect
-from hotel_web_application.dao import num
-from hotel_web_application.hotelcontroller import remaining_accounts
+from dao import num
+from hotelcontroller import remaining_accounts
 
 @app.route('/login/',methods=['GET',"POST"])
 def authenticate_user():
