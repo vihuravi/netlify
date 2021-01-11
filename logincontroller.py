@@ -43,7 +43,7 @@ def hotel_booking():
     if 'userinfo' in session:
         if session['userinfo'] != 'admin':
             return render_template('book_hotel.html',user=session['userinfo'],hotellist=Hotel.query.all())
-    return render_template('book_hotel.html', user='',hotellist=Hotel.query.all(),cust='')
+    return render_template('book_hotel.html', user='',hotellist=Hotel.query.all())
 
 @app.route('/booked/<user>')
 def room_booking(user):
