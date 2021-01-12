@@ -30,7 +30,7 @@ def dashboard_page():
                                roomlist = Room.query.all(),menu = Menu.dummy_menu(),
                                menulist = Menu.query.all(),account = Account.dummy_account(),
                                acclist2 = Account.query.all())
-    return render_template('login.html', resp='')
+    return render_template('login.html', resp='',)
 
 @app.route('/logout/',methods=['GET'])
 def logout():
