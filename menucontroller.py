@@ -13,6 +13,7 @@ def save_or_update_menu():
             menuhotels = request.form.getlist('menuhotels')
             dbmenu = Menu.query.filter_by(id=menuid).first()
             if dbmenu:
+                # dbmenu.id = menuid
                 dbmenu.type = menuid
                 dbmenu.name = menuname
                 dbmenu.price = menuprice
@@ -25,7 +26,7 @@ def save_or_update_menu():
                 db.session.commit()
                 msg = "Menu Updated Successfully..!"
             else:
-                dbmenu = Menu(id=menuid,name=menuname,price=menuprice)
+                dbmenu = Menu(name=menuname,price=menuprice)
                 hotellist = []
                 if menuhotels:
                     for hotel in menuhotels:

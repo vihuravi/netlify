@@ -12,14 +12,15 @@ def save_or_update_accounts():
             acctype = request.form['accty']
             accbal = request.form['accbal']
             dbacc = Account.query.filter_by(id=accno).first()
-            if dbacc:
+            if accno:
+                # dbacc.id = accno
                 dbacc.type = acctype
                 dbacc.balance = accbal
                 db.session.commit()
                 msg = "Acccount Updated Successfully..!"
 
             else:
-                dbacc = Account(id=accno,type=acctype,balance=accbal)
+                dbacc = Account(type=acctype,balance=accbal)
                 db.session.add(dbacc)
                 db.session.commit()
                 msg = "Account Created Successfully...!"
@@ -31,6 +32,7 @@ def save_or_update_accounts():
                                menulist=Menu.query.all(), account=Account.dummy_account(),
                                acclist2=Account.query.all())
     return render_template('login.html', resp='')
+
 @app.route('/account/edit/<int:acid>')
 def edit_account_info(acid):
     if 'userinfo' in session:

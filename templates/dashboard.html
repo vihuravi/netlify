@@ -11,6 +11,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+      .table td {
+   text-align: center;
+}
+.table th {
+   text-align: center;
+}
+  </style>
 
 </head>
 <body>
@@ -99,7 +107,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="hotelid">Hotel Id &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="hotelid" placeholder="Enter hotel id" name="hotelid" value="{{hotel.id}}">
+        <input type="text" class="form-control" id="hotelid" placeholder="Enter hotel id" name="hotelid" value="{{hotel.id}}" readonly>
       </div>
             </div>
          <br>
@@ -202,7 +210,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="hotelid">Hotel Id &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter hotel id" name="hotelid" value="{{hotel.id}}">
+        <input type="text" class="form-control"  placeholder="Enter hotel id" name="hotelid" value="{{hotel.id}}" readonly>
       </div>
             </div>
          <br>
@@ -305,7 +313,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="hotelid">Hotel Id &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter hotel id" name="hotelid" value="{{hotel.id}}">
+        <input type="text" class="form-control"  placeholder="Enter hotel id" name="hotelid" value="{{hotel.id}}" readonly>
       </div>
             </div>
          <br>
@@ -423,7 +431,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="rid">Room Id &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="rid" placeholder="Enter room id" name="rid" value="{{room.id}}">
+        <input type="text" class="form-control" id="rid" placeholder="Enter room id" name="rid" value="{{room.id}}" readonly>
       </div>
             </div>
          <br>
@@ -547,7 +555,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="rid">Room Id &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter room id" name="rid" value="{{room.id}}">
+        <input type="text" class="form-control"  placeholder="Enter room id" name="rid" value="{{room.id}}" readonly>
       </div>
             </div>
          <br>
@@ -671,7 +679,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="rid">Room Id &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter room id" name="rid" value="{{room.id}}">
+        <input type="text" class="form-control"  placeholder="Enter room id" name="rid" value="{{room.id}}" readonly>
       </div>
             </div>
          <br>
@@ -807,7 +815,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="menuid">Menu Id &nbsp; &nbsp; &nbsp;&nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="menuid" placeholder="Enter menu id" name="menuid" value="{{menu.id}}">
+        <input type="text" class="form-control" id="menuid" placeholder="Enter menu id" name="menuid" value="{{menu.id}}" readonly>
       </div>
             </div>
          <br>
@@ -896,7 +904,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="menuid">Menu Id &nbsp; &nbsp; &nbsp;&nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter menu id" name="menuid" value="{{menu.id}}">
+        <input type="text" class="form-control"  placeholder="Enter menu id" name="menuid" value="{{menu.id}}" readonly>
       </div>
             </div>
          <br>
@@ -985,7 +993,7 @@
             <div class="form-group">
       <label class="control-label col-sm-2" for="menuid">Menu Id &nbsp; &nbsp; &nbsp;&nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter menu id" name="menuid" value="{{menu.id}}">
+        <input type="text" class="form-control"  placeholder="Enter menu id" name="menuid" value="{{menu.id}}" readonly>
       </div>
             </div>
          <br>
@@ -1082,7 +1090,7 @@
        <div class="form-group">
       <label class="control-label col-sm-2" for="accid">Account Id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter account id" name="accid" value="{{account.id}}">
+        <input type="text" class="form-control"  placeholder="Enter account id" name="accid" value="{{account.id}}" readonly>
       </div>
             </div>
          <br>
@@ -1164,7 +1172,7 @@
        <div class="form-group">
       <label class="control-label col-sm-2" for="accid">Account Id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" id="accid" placeholder="Enter account id" name="accid" value="{{account.id}}">
+        <input type="text" class="form-control" id="accid" placeholder="Enter account id" name="accid" value="{{account.id}}" readonly>
       </div>
             </div>
          <br>
@@ -1244,7 +1252,7 @@
        <div class="form-group">
       <label class="control-label col-sm-2" for="accid">Account Id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: </label>
       <div class="col-sm-4">
-        <input type="text" class="form-control"  placeholder="Enter account id" name="accid" value="{{account.id}}">
+        <input type="text" class="form-control"  placeholder="Enter account id" name="accid" value="{{account.id}}" readonly>
       </div>
             </div>
          <br>

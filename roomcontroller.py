@@ -6,7 +6,6 @@ from hotelcontroller import remaining_accounts
 @app.route('/room/',methods=['GET','POST'])
 def save_or_update_rooms():
     if 'userinfo' in session:
-   #if user:
         msg  = ''
         if request.method == 'POST':
             rid = int(request.form['rid'])
@@ -17,6 +16,7 @@ def save_or_update_rooms():
             hotelids = request.form.getlist('hotelid')
             dbroom = Room.query.filter_by(id=rid).first()
             if dbroom:
+                # dbroom.id = rid
                 dbroom.type = type
                 dbroom.charge = charge
                 dbroom.status = status
@@ -28,7 +28,7 @@ def save_or_update_rooms():
                 db.session.commit()
                 msg = "Room Info Updated Successfully..!"
             else:
-                dbroom = Room(id=rid,type=type,charge=charge,status=status,qty=qty)
+                dbroom = Room(type=type,charge=charge,status=status,qty=qty)
                 hotellist = []
                 for hotel in hotelids:
                     hotellist.append(Hotel.query.filter_by(id=hotel).first())

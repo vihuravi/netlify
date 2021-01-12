@@ -100,7 +100,7 @@ class Login(GenericModel):
     username = db.Column('username', db.String(20), primary_key=True)
     password = db.Column('password', db.String(20))
 
-
+# db.drop_all()
 db.create_all()
 login = Login.query.filter(Login.username=="admin",Login.password=="admin123").first()
 if login:
@@ -110,6 +110,9 @@ else:
     db.session.add(log)
     db.session.commit()
     
+# hot = Hotel.query.filter(Hotel.address=="Aurangabad").first()
+# db.session.delete(hot)
+# db.session.commit()
     
 if __name__ == '__main__':
     cust = Login.query.filter_by(username='ravindra').first()
